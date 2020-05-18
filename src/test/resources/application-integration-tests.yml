@@ -1,0 +1,41 @@
+test:
+  jwt:
+  
+logging:
+  level:
+    org.springframework: DEBUG
+    org.hibernate.SQL: DEBUG
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        id.new_generator_mappings: false
+        format_sql: true
+      jadira.usertype.autoRegisterUserTypes: true
+  datasource:
+    url:
+      username:
+      password:
+  jackson:
+    date-format: "YYYY-MM-dd"
+    serialization:
+      write_dates_as_timestamps: false
+
+
+auth0:
+  main:
+    clientId: 7VVq0OHEf5qmvCwnPej1hEkb1WMNlyIL
+    clientSecret: OTOFqm8KmaFT1M2LtNCoVBFAjaP_MJohOlggVE9FaRUGkzg9uteHrRYvHE88S7N2
+    issuer: https://breadth-of-the-wild.auth0.com/
+    audience: https://breadth-of-the-wild.auth0.com/api/v2/
+    expirationTime: 36000 # 10 minutes
+
+  managementApi:
+    clientId: 0HNj00BI03EI5aQNKrmoTScTP6qbYIJv
+    clientSecret: CuxjsWJl5UwmVw5KoSG0rwnHa1OM-e2LKgmZEsB2kSAl8G7ajwCYAFCo69FO8_nf
+    issuer: https://breadth-of-the-wild.auth0.com/
+    audience: https://breadth-of-the-wild.auth0.com/api/v2/
+    expirationTime: 36000 # 10 minutes
+

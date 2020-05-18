@@ -1,0 +1,42 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        id.new_generator_mappings: false
+        format_sql: true
+      jadira.usertype.autoRegisterUserTypes: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/ [dbname] ?useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username:
+    password:
+  jackson:
+    date-format: "YYYY-MM-dd"
+    serialization:
+      write_dates_as_timestamps: false
+
+auth0:
+#  SPA
+  main:
+    clientId:
+    clientSecret:
+    issuer: https://[yourAuth0].auth0.com/
+    audience: https://[yourAuth0].auth0.com/api/v2/
+    expirationTime: 36000 # 10 minutes
+
+#  (m2m)
+  managementApi:
+    clientId:
+    clientSecret:
+    issuer: https://[yourAuth0].auth0.com/
+    audience: https://[yourAuth0].auth0.com/api/v2/
+    expirationTime: 36000 # 10 minutes
+
